@@ -59,6 +59,12 @@
     <?php 
         $conn = mysqli_connect('localhost','root', '', 'egzamin6');
 
+        $query3 = mysqli_query($conn, 'SELECT miesiac, rok FROM `zadania` WHERE dataZadania = "2020-08-01"');
+
+        while ($row3 = mysqli_fetch_assoc($query3)){
+        echo "<h1>miesiąc: $row3[miesiac], rok: $row3[rok]</h1>";
+        };
+
         mysqli_close($conn);
     ?>
         <p>Stronę wykonał: kozak</p>
